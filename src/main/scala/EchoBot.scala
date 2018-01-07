@@ -22,19 +22,19 @@ class EchoBotActor() extends TelegramBot with Polling with Commands with Actor {
 
   lazy val uc = UserControl()
 
-  onCommand("hello") { implicit msg =>
-    reply("My token is SAFE!")
-  }
-
-  val rng = new Random(System.currentTimeMillis())
-  onCommand("random", "rand") { implicit msg =>
-    withArgs {
-      case Seq(Extractors.Int(n)) if n > 0 =>
-        reply(rng.nextInt(n).toString)
-      case _ =>
-        reply("Invalid argumentヽ(ಠ_ಠ)ノ")
-    }
-  }
+//  onCommand("hello") { implicit msg =>
+//    reply("My token is SAFE!")
+//  }
+//
+//  val rng = new Random(System.currentTimeMillis())
+//  onCommand("random", "rand") { implicit msg =>
+//    withArgs {
+//      case Seq(Extractors.Int(n)) if n > 0 =>
+//        reply(rng.nextInt(n).toString)
+//      case _ =>
+//        reply("Invalid argumentヽ(ಠ_ಠ)ノ")
+//    }
+//  }
   onCommand("start"){ implicit msg =>
   }
   onCommand("help"){ implicit msg =>
