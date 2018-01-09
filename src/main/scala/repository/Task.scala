@@ -37,7 +37,7 @@ class TaskRepository(db: Database){
   def deleteById(username: String, id: Long): Future[Int] =
     db.run(TaskTable.table.filter(_.id === id).delete)
   def deleteAll(username: String): Future[Int] = db.run(TaskTable.table.filter(_.userId === username).delete)
-  def setStatus(username: String, id: Long,status: Int): Future[Int] =
+  def setStatus(username: String, id: Long, status: Int): Future[Int] =
     db.run(TaskTable.table.filter(_.userId === username).filter(_.id === id).map(msg => (msg.status)).update((status)))
   def setText(username: String, id: Long, text: String): Future[Int] =
     db.run(TaskTable.table.filter(_.userId === username).filter(_.id === id).map(msg => (msg.text)).update((text)))
