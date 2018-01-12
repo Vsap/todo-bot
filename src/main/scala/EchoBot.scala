@@ -21,7 +21,6 @@ class EchoBotActor() extends TelegramBot  with Polling with Commands with Actor 
     .envOrNone("BOT_TOKEN")
     .getOrElse(Source.fromFile("bot.token").getLines().mkString)
 
-  lazy val uc = UserControl()
 
 
 //  onCommand("hello") { implicit msg =>
@@ -67,22 +66,47 @@ class EchoBotActor() extends TelegramBot  with Polling with Commands with Actor 
    withArgs{args =>
      using(_.from){
        user =>
-         taskRepository.insert(Task(Some(0),user.username.get, args.mkString(""), 1))
-         reply("done!")
+         taskRepository.getLast(user.username.get).foreach { last =>
+           taskRepository.insert(Task(Some(0), user.username.get, last + 1, args.mkString(" "), 1))
+           reply("done!")
+         }
      }
    }
   }
-  onCommand("/tasks"){ implicit msg =>
+  onCommand("/all"){ implicit msg =>
     using(_.from) { // sender
       user =>
         taskRepository.getAll(user.username.get) onSuccess{
-          case tasks => tasks.map{case Task(Some(id), _, text, 1) =>
-            reply("#"+id +"\n "+ text +";\n status: todo")
-          case Task(Some(id), _, text, 0) =>
-            reply("#"+id +";\n "+ text +";\n status: done")
+          case tasks => tasks.map{case Task(_, _, num, text, 1) =>
+            reply("#"+num +"\n "+ text +";\n status: todo")
+          case Task(_ , _, num, text, 0) =>
+            reply("#"+num +";\n "+ text +";\n status: done")
           case _ => reply("unknown error with status presentation! ヽ(ಠ_ಠ)ノ" )
           }
         }
+    }
+  }
+  onCommand("/todo"){ implicit msg =>
+    using(_.from) { // sender
+      user =>
+        taskRepository.getByStatus(user.username.get, 1).foreach{ tasks =>
+          tasks.toList.map(t => reply("#" + t.id.get+ " " + t.text))
+        }
+    }
+  }
+  onCommand("/done"){ implicit msg =>
+    using(_.from) { // sender
+      user =>
+        taskRepository.getByStatus(user.username.get, 0).foreach{ tasks =>
+          tasks.toList.map(t => reply("#" + t.id.get+ " " + t.text))
+        }
+    }
+  }
+  onCommand("/remove"){implicit  msg =>
+    withArgs{
+      case Seq(Extractors.Long(n)) => using(_.from){user => taskRepository.deleteById(user.username.get, n)
+        reply("removed!")}
+      case _ => reply("unknown index for /remove! ヽ(ಠ_ಠ)ノ")
     }
   }
   onCommand("/mark"){ implicit msg =>
@@ -99,17 +123,17 @@ class EchoBotActor() extends TelegramBot  with Polling with Commands with Actor 
       case _ => reply("unknown error with /unmark! ヽ(ಠ_ಠ)ノ")
     }
   }
-  onCommand("/edit"){ implicit msg => //////////REMAKE!!
-    withArgs{ args =>
-      withArgs{ newText =>
-        using(_.from){
-          user =>
-            taskRepository.setText(user.username.get, args.mkString("").toInt, newText.mkString(""))
-            reply("task changed!")
-        }
-      }
-    }
-  }
+//  onCommand("/edit"){ implicit msg => //////////REMAKE!!
+//    withArgs{ args =>
+//      withArgs{ newText =>
+//        using(_.from){
+//          user =>
+//            taskRepository.setText(user.username.get, args.mkString(" ").toInt, newText.mkString(" "))
+//            reply("task changed!")
+//        }
+//      }
+//    }
+//  }
 
 //  onMessage { implicit message =>
 //    message.from.map(_.id.toString).foreach { userId =>

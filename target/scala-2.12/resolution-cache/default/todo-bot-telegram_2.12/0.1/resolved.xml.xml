@@ -4,7 +4,7 @@
 		module="todo-bot-telegram_2.12"
 		revision="0.1"
 		status="integration"
-		publication="20180105232619"
+		publication="20180109193410"
 	>
 		<description>
 		todo-bot-telegram

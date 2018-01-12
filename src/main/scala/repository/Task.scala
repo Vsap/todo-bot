@@ -7,17 +7,18 @@ import scala.concurrent.Future
 import scala.concurrent.ExecutionContext.Implicits.global
 
 
-case class Task(id: Option[Long], userId: String, text: String, status: Int)
+case class Task(id: Option[Long], userId: String, taskNumber: Int, text: String, status: Int)
 
 class TaskTable(tag: Tag)  extends Table[Task](tag, "tasks"){
   val id = column[Option[Long]]("id", O.PrimaryKey, O.AutoInc)
+  val taskNumber = column[Int]("number")
   val userId = column[String]("username")
   val text = column[String]("text")
   val status = column[Int]("status")
 
   val userIdFk = foreignKey("username_fk", userId, TableQuery[UserTable])(_.login)
 
-  def * = (id, userId, text, status) <> (Task.apply _ tupled, Task.unapply)
+  def * = (id, userId, taskNumber, text, status) <> (Task.apply _ tupled, Task.unapply)
 }
 
 object TaskTable{val table = TableQuery[TaskTable]}
@@ -29,13 +30,16 @@ class TaskRepository(db: Database){
     val query = TaskTable.table.filter(_.userId === username).result
     db.run(query)
   }
-
+  def getLast(username: String):Future[Int] =
+    db.run(TaskTable.table.filter(_.userId === username).length.result)
   def getByStatus(username: String, status: Int): Future[Seq[Task]] =
     db.run(TaskTable.table.filter(_.userId === username).filter(_.status === status).result)
   def deleteByStatus(username: String, status: Int): Future[Int] =
     db.run(TaskTable.table.filter(_.userId === username).filter(_.status === status).delete)
   def deleteById(username: String, id: Long): Future[Int] =
     db.run(TaskTable.table.filter(_.id === id).delete)
+  def deleteByNum(username: String, num: Int): Future[Int] =
+    db.run(TaskTable.table.filter(_.userId === username).filter(_.taskNumber === num).delete)
   def deleteAll(username: String): Future[Int] = db.run(TaskTable.table.filter(_.userId === username).delete)
   def setStatus(username: String, id: Long, status: Int): Future[Int] =
     db.run(TaskTable.table.filter(_.userId === username).filter(_.id === id).map(msg => (msg.status)).update((status)))

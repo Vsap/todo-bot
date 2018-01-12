@@ -4,7 +4,7 @@
 		module="todo-bot-telegram$sources"
 		revision="0.1"
 		status="integration"
-		publication="20180108153413"
+		publication="20180109193425"
 	/>
 	<configurations>
 		<conf name="compile" visibility="public" description=""/>

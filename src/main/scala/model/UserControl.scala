@@ -17,7 +17,7 @@ object Interface{
     def changeStatus(id: Long, status: Int) = taskRepository.setStatus(login,id,status)
     def changeText(id: Long, text: String) = taskRepository.setText(login,id,text)
     def add(text: String) =
-      taskRepository.insert(Task(Some(0), login, text, 1))
+      taskRepository.insert(Task(Some(0), login,0, text, 1))
     def remove = taskRepository.deleteAll(login)
     def removeById(id: Long) =
       taskRepository.deleteById(login, id)
