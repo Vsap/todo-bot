@@ -14,7 +14,7 @@ import scala.util.Random
 import model._
 import repository.{Task,User}
 
-class EchoBotActor() extends TelegramBot  with Polling with Commands with Actor {
+class TodoBotActor extends TelegramBot  with Polling with Commands with Actor {
 
   lazy val token =
     scala.util.Properties
@@ -65,9 +65,9 @@ class EchoBotActor() extends TelegramBot  with Polling with Commands with Actor 
  onCommand("/add"){ implicit msg =>
    withArgs{args =>
      using(_.from){
-       user =>
-         taskRepository.getLast(user.username.get).foreach { last =>
-           taskRepository.insert(Task(Some(0), user.username.get, last + 1, args.mkString(" "), 1))
+       implicit user =>
+         taskRepository.getLast foreach { last =>
+           taskRepository.insert(Task(Some(0), user.username.get, last + 1, args.mkString(" "), 1, None))
            reply("done!")
          }
      }
@@ -75,50 +75,53 @@ class EchoBotActor() extends TelegramBot  with Polling with Commands with Actor 
   }
   onCommand("/all"){ implicit msg =>
     using(_.from) { // sender
-      user =>
-        taskRepository.getAll(user.username.get) onSuccess{
-          case tasks => tasks.map{case Task(_, _, num, text, 1) =>
-            reply("#"+num +"\n "+ text +";\n status: todo")
-          case Task(_ , _, num, text, 0) =>
-            reply("#"+num +";\n "+ text +";\n status: done")
-          case _ => reply("unknown error with status presentation! ヽ(ಠ_ಠ)ノ" )
-          }
+      implicit user =>
+        taskRepository.getAll foreach{
+           tasks => tasks.map{
+             case Task(_, _, num, text, 1, _) =>
+               reply("#" + num + "\n " + text + ";\n status: todo")
+             case Task(_, _, num, text, 0, _) =>
+               reply("#" + num + ";\n " + text + ";\n status: done")
+             case _ => reply("unknown error with status presentation! ヽ(ಠ_ಠ)ノ")
+           }
         }
     }
   }
   onCommand("/todo"){ implicit msg =>
-    using(_.from) { // sender
-      user =>
-        taskRepository.getByStatus(user.username.get, 1).foreach{ tasks =>
-          tasks.toList.map(t => reply("#" + t.id.get+ " " + t.text))
+     using(_.from) { // sender
+       implicit user =>
+        taskRepository.getByStatus(1).foreach{ tasks =>
+          tasks.toList.map(t => reply("#" + t.taskNumber + " " + t.text))
         }
     }
   }
   onCommand("/done"){ implicit msg =>
     using(_.from) { // sender
-      user =>
-        taskRepository.getByStatus(user.username.get, 0).foreach{ tasks =>
-          tasks.toList.map(t => reply("#" + t.id.get+ " " + t.text))
+      implicit user =>
+        taskRepository.getByStatus(0).foreach{ tasks =>
+          tasks.toList.map(t => reply("#" + t.taskNumber + " " + t.text))
         }
     }
   }
   onCommand("/remove"){implicit  msg =>
     withArgs{
-      case Seq(Extractors.Long(n)) => using(_.from){user => taskRepository.deleteById(user.username.get, n)
+      case Seq(Extractors.Long(n)) => using(_.from){implicit user => taskRepository deleteById n
         reply("removed!")}
       case _ => reply("unknown index for /remove! ヽ(ಠ_ಠ)ノ")
     }
   }
   onCommand("/mark"){ implicit msg =>
     withArgs{
-      case Seq(Extractors.Long(n)) => using(_.from){user => taskRepository.setStatus(user.username.get, n, 0)
-        reply("marked!")}
+      case Seq(Extractors.Int(n)) =>
+        using(_.from){implicit user =>
+          taskRepository.setStatus(n, 0)
+          reply("marked!")}
       case _ => reply("unknown error with /mark! ヽ(ಠ_ಠ)ノ")
     }
   }
   onCommand("/unmark"){ implicit msg =>
     withArgs{
-      case Seq(Extractors.Long(n)) => using(_.from){user => taskRepository.setStatus(user.username.get, n, 1)
+      case Seq(Extractors.Int(n)) => using(_.from){implicit user => taskRepository.setStatus(n, 1)
         reply("unmarked!")}
       case _ => reply("unknown error with /unmark! ヽ(ಠ_ಠ)ノ")
     }
@@ -158,5 +161,5 @@ class EchoBotActor() extends TelegramBot  with Polling with Commands with Actor 
 case class SendMessage(userMessage: UserMessage)(implicit val message: Message)
 
 object EchoBotActor{
-  def props(): Props = Props(new EchoBotActor())
+  def props(): Props = Props(new TodoBotActor())
 }

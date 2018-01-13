@@ -13,8 +13,8 @@ object Main {
 
   def main(args: Array[String]): Unit = {
     println("Hello")
-//    Await.result(db.run(UserTable.table.schema.create),Duration.Inf)
-//    Await.result(db.run(TaskTable.table.schema.create),Duration.Inf)
+    Await.result(db.run(UserTable.table.schema.create),Duration.Inf)
+    Await.result(db.run(TaskTable.table.schema.create),Duration.Inf)
     val actorSystem = ActorSystem("my-actor-system")
     actorSystem.actorOf(EchoBotActor.props(), "echo-bot-actor")
   }
