@@ -16,6 +16,8 @@
       </SbtProjectSettings>
       <SbtProjectSettings>
         <option name="externalProjectPath" value="C:\Users\vsap2\IdeaProjects\todo-bot-telegram" />
+        <option name="useAutoImport" value="true" />
+        <option name="useOurOwnAutoImport" value="true" />
       </SbtProjectSettings>
     </option>
   </component>

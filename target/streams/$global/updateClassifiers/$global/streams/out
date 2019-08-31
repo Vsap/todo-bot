@@ -4503,104 +4503,40 @@
 [debug] 	resolved ivy file produced in cache
 [debug] :: downloading artifacts ::
 [debug] 	[NOT REQUIRED] com.typesafe.scala-logging#scala-logging_2.12;3.7.2!scala-logging_2.12.jar(src)
-[debug] no default ivy user dir defined: set to C:\Users\vsap2\.ivy2
-[debug] 	[NOT REQUIRED] com.typesafe.slick#slick_2.12;3.2.1!slick_2.12.jar(src)
-[debug] including url: jar:file:/C:/Users/vsap2/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.0.4/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
-[debug] no default ivy user dir defined: set to C:\Users\vsap2\.ivy2
-[debug] 	[NOT REQUIRED] joda-time#joda-time;2.9.5!joda-time.jar(src)
-[debug] 	[NOT REQUIRED] com.typesafe.slick#slick-hikaricp_2.12;3.2.1!slick-hikaricp_2.12.jar(src)
-[debug] no default cache defined: set to C:\Users\vsap2\.ivy2\cache
-[debug] including url: jar:file:/C:/Users/vsap2/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.0.4/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml
-[debug] no default ivy user dir defined: set to C:\Users\vsap2\.ivy2
-[debug] including url: jar:file:/C:/Users/vsap2/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.0.4/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
-[debug] no default ivy user dir defined: set to C:\Users\vsap2\.ivy2
-[debug] including url: jar:file:/C:/Users/vsap2/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.0.4/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
-[debug] including url: jar:file:/C:/Users/vsap2/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.0.4/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
-[debug] no default cache defined: set to C:\Users\vsap2\.ivy2\cache
-[debug] including url: jar:file:/C:/Users/vsap2/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.0.4/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml
-[debug] including url: jar:file:/C:/Users/vsap2/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.0.4/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-local.xml
-[debug] including url: jar:file:/C:/Users/vsap2/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.0.4/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml
-[debug] including url: jar:file:/C:/Users/vsap2/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.0.4/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-local.xml
-[debug] including url: jar:file:/C:/Users/vsap2/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.0.4/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
-[debug] including url: jar:file:/C:/Users/vsap2/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.0.4/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml
-[debug] settings loaded (30ms)
-[debug] 	default cache: C:\Users\vsap2\.ivy2\cache
-[debug] 	default resolver: default
-[debug] 	-- 5 resolvers:
-[debug] 	shared [file]
-[debug] 	default [chain] [local, main]
-[debug] 	public [ibiblio]
-[debug] 	main [chain] [shared, public]
-[debug] 	local [file]
-[debug] 	[NOT REQUIRED] com.typesafe.akka#akka-http-core_2.12;10.0.10!akka-http-core_2.12.jar(src)
-[debug] including url: jar:file:/C:/Users/vsap2/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.0.4/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
-[debug] 	[NOT REQUIRED] org.scala-lang.modules#scala-xml_2.12;1.0.6!scala-xml_2.12.jar(src)
-[debug] settings loaded (57ms)
-[debug] 	default cache: C:\Users\vsap2\.ivy2\cache
-[debug] 	default resolver: default
-[debug] 	-- 5 resolvers:
-[debug] 	shared [file]
-[debug] 	default [chain] [local, main]
-[debug] 	public [ibiblio]
-[debug] 	main [chain] [shared, public]
-[debug] 	local [file]
-[debug] 	[NOT REQUIRED] com.typesafe.akka#akka-stream_2.12;2.4.19!akka-stream_2.12.jar(src)
 [debug] 	[NOT REQUIRED] info.mukel#telegrambot4s_2.12;3.0.14!telegrambot4s_2.12.jar(src)
+[debug] 	[NOT REQUIRED] com.thoughtworks.paranamer#paranamer;2.8!paranamer.jar(src)
+[debug] 	[NOT REQUIRED] org.json4s#json4s-ast_2.12;3.5.3!json4s-ast_2.12.jar(src)
+[debug] 	[NOT REQUIRED] joda-time#joda-time;2.9.5!joda-time.jar(src)
+[debug] 	[NOT REQUIRED] org.scala-lang#scala-library;2.12.4!scala-library.jar(src)
+[debug] 	[NOT REQUIRED] com.fasterxml.jackson.core#jackson-databind;2.8.4!jackson-databind.jar(src)
+[debug] 	[NOT REQUIRED] com.typesafe.slick#slick_2.12;3.2.1!slick_2.12.jar(src)
+[debug] 	[NOT REQUIRED] com.typesafe.akka#akka-parsing_2.12;10.0.10!akka-parsing_2.12.jar(src)
+[debug] 	[NOT REQUIRED] org.scala-lang#scala-reflect;2.12.4!scala-reflect.jar(src)
+[debug] 	[NOT REQUIRED] org.json4s#json4s-ext_2.12;3.5.3!json4s-ext_2.12.jar(src)
+[debug] 	[NOT REQUIRED] org.scala-lang.modules#scala-parser-combinators_2.12;1.0.4!scala-parser-combinators_2.12.jar(src)
+[debug] 	[NOT REQUIRED] org.postgresql#postgresql;42.1.4!postgresql.jar(src)
+[debug] 	[NOT REQUIRED] com.typesafe.slick#slick-hikaricp_2.12;3.2.1!slick-hikaricp_2.12.jar(src)
+[debug] 	[NOT REQUIRED] com.typesafe.akka#akka-http-core_2.12;10.0.10!akka-http-core_2.12.jar(src)
+[debug] 	[NOT REQUIRED] org.scala-lang.modules#scala-xml_2.12;1.0.6!scala-xml_2.12.jar(src)
+[debug] 	[NOT REQUIRED] com.typesafe.akka#akka-stream_2.12;2.4.19!akka-stream_2.12.jar(src)
 [debug] 	[NOT REQUIRED] com.typesafe.akka#akka-actor_2.12;2.4.19!akka-actor_2.12.jar(src)
 [debug] 	[NOT REQUIRED] com.typesafe.akka#akka-http_2.12;10.0.10!akka-http_2.12.jar(src)
 [debug] 	[NOT REQUIRED] org.joda#joda-convert;1.8.1!joda-convert.jar(src)
 [debug] 	[NOT REQUIRED] org.slf4j#slf4j-api;1.7.25!slf4j-api.jar(src)
 [debug] 	[NOT REQUIRED] com.fasterxml.jackson.core#jackson-annotations;2.8.0!jackson-annotations.jar(src)
-[debug] 	[NOT REQUIRED] com.fasterxml.jackson.core#jackson-databind;2.8.4!jackson-databind.jar(src)
-[debug] 	[NOT REQUIRED] com.thoughtworks.paranamer#paranamer;2.8!paranamer.jar(src)
-[debug] 	[NOT REQUIRED] org.postgresql#postgresql;42.1.4!postgresql.jar(src)
 [debug] 	[NOT REQUIRED] org.json4s#json4s-core_2.12;3.5.3!json4s-core_2.12.jar(src)
-[debug] 	[NOT REQUIRED] org.json4s#json4s-ast_2.12;3.5.3!json4s-ast_2.12.jar(src)
 [debug] 	[NOT REQUIRED] com.zaxxer#HikariCP;2.5.1!HikariCP.jar(src)
-[debug] no default cache defined: set to C:\Users\vsap2\.ivy2\cache
-[debug] including url: jar:file:/C:/Users/vsap2/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.0.4/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml
 [debug] 	[NOT REQUIRED] com.typesafe#ssl-config-core_2.12;0.2.1!ssl-config-core_2.12.jar(src)
 [debug] 	[NOT REQUIRED] com.typesafe#config;1.3.0!config.jar(src)
-[debug] including url: jar:file:/C:/Users/vsap2/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.0.4/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-local.xml
+[debug] 	[NOT REQUIRED] org.json4s#json4s-jackson_2.12;3.5.3!json4s-jackson_2.12.jar(src)
+[debug] 	[NOT REQUIRED] org.json4s#json4s-scalap_2.12;3.5.3!json4s-scalap_2.12.jar(src)
+[debug] 	[NOT REQUIRED] com.fasterxml.jackson.core#jackson-core;2.8.4!jackson-core.jar(src)
 [debug] 	[NOT REQUIRED] org.reactivestreams#reactive-streams;1.0.0!reactive-streams.jar(src)
 [debug] 	[NOT REQUIRED] org.scala-lang.modules#scala-java8-compat_2.12;0.8.0!scala-java8-compat_2.12.jar(src)
-[debug] including url: jar:file:/C:/Users/vsap2/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.0.4/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml
 [debug] 	[NOT REQUIRED] com.typesafe.akka#akka-testkit_2.12;2.4.19!akka-testkit_2.12.jar(src)
 [debug] 	[NOT REQUIRED] jline#jline;2.14.5!jline.jar(src)
 [debug] 	[NOT REQUIRED] org.scala-lang#scala-compiler;2.12.4!scala-compiler.jar(src)
-[debug] including url: jar:file:/C:/Users/vsap2/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.0.4/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
-[debug] 	[NOT REQUIRED] org.scala-lang.modules#scala-parser-combinators_2.12;1.0.4!scala-parser-combinators_2.12.jar(src)
-[debug] settings loaded (102ms)
-[debug] 	default cache: C:\Users\vsap2\.ivy2\cache
-[debug] 	default resolver: default
-[debug] 	-- 5 resolvers:
-[debug] 	shared [file]
-[debug] 	default [chain] [local, main]
-[debug] 	public [ibiblio]
-[debug] 	main [chain] [shared, public]
-[debug] 	local [file]
-[debug] 	[NOT REQUIRED] com.typesafe.akka#akka-parsing_2.12;10.0.10!akka-parsing_2.12.jar(src)
-[debug] 	[NOT REQUIRED] org.scala-lang#scala-reflect;2.12.4!scala-reflect.jar(src)
-[debug] 	[NOT REQUIRED] org.json4s#json4s-ext_2.12;3.5.3!json4s-ext_2.12.jar(src)
-[debug] 	[NOT REQUIRED] org.json4s#json4s-scalap_2.12;3.5.3!json4s-scalap_2.12.jar(src)
-[debug] no default cache defined: set to C:\Users\vsap2\.ivy2\cache
-[debug] including url: jar:file:/C:/Users/vsap2/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.0.4/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml
-[debug] 	[NOT REQUIRED] com.fasterxml.jackson.core#jackson-core;2.8.4!jackson-core.jar(src)
-[debug] including url: jar:file:/C:/Users/vsap2/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.0.4/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-local.xml
-[debug] 	[NOT REQUIRED] org.json4s#json4s-jackson_2.12;3.5.3!json4s-jackson_2.12.jar(src)
-[debug] including url: jar:file:/C:/Users/vsap2/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.0.4/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml
-[debug] including url: jar:file:/C:/Users/vsap2/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.0.4/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
-[debug] settings loaded (131ms)
-[debug] 	default cache: C:\Users\vsap2\.ivy2\cache
-[debug] 	default resolver: default
-[debug] 	-- 5 resolvers:
-[debug] 	shared [file]
-[debug] 	default [chain] [local, main]
-[debug] 	public [ibiblio]
-[debug] 	main [chain] [shared, public]
-[debug] 	local [file]
-[debug] 	[NOT REQUIRED] org.scala-lang#scala-library;2.12.4!scala-library.jar(src)
-[debug] :: resolution report :: resolve 1996ms :: artifacts dl 211ms
+[debug] :: resolution report :: resolve 4744ms :: artifacts dl 323ms
 [debug] 	report for default#todo-bot-telegram$sources;0.1 compile produced in C:\Users\vsap2\IdeaProjects\todo-bot-telegram\target\scala-2.12\resolution-cache\reports\default-todo-bot-telegram$sources-compile.xml
 [debug] 	report for default#todo-bot-telegram$sources;0.1 runtime produced in C:\Users\vsap2\IdeaProjects\todo-bot-telegram\target\scala-2.12\resolution-cache\reports\default-todo-bot-telegram$sources-runtime.xml
 [debug] 	report for default#todo-bot-telegram$sources;0.1 test produced in C:\Users\vsap2\IdeaProjects\todo-bot-telegram\target\scala-2.12\resolution-cache\reports\default-todo-bot-telegram$sources-test.xml
@@ -4612,4 +4548,4 @@
 [debug] 	report for default#todo-bot-telegram$sources;0.1 plugin produced in C:\Users\vsap2\IdeaProjects\todo-bot-telegram\target\scala-2.12\resolution-cache\reports\default-todo-bot-telegram$sources-plugin.xml
 [debug] 	report for default#todo-bot-telegram$sources;0.1 pom produced in C:\Users\vsap2\IdeaProjects\todo-bot-telegram\target\scala-2.12\resolution-cache\reports\default-todo-bot-telegram$sources-pom.xml
 [debug] 	report for default#todo-bot-telegram$sources;0.1 scala-tool produced in C:\Users\vsap2\IdeaProjects\todo-bot-telegram\target\scala-2.12\resolution-cache\reports\default-todo-bot-telegram$sources-scala-tool.xml
-[debug] 	resolve done (1996ms resolve - 211ms download)
+[debug] 	resolve done (4744ms resolve - 323ms download)
